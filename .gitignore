@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+checkpoints/
+data/shakespeare.txt
+train.log
+prepare.log
+data/tinystories/
+data/dialog/
