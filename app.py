@@ -44,6 +44,17 @@ MODELS = {
 EOT = "<|endoftext|>"
 STOP_STR = "\nUser:"  # chat: the model starting the *user's* next line = done
 
+# Invisible warm-up exchange fed to the model before every chat — a poor
+# man's system prompt. It has to *close* the greeting ritual, not open one:
+# my first version asked "what is your name?" and the model happily kept
+# doing introductions, inventing names for everyone involved.
+PRIMING = [
+    ("User", "Hi!"),
+    ("TsamAI", "Hi! How are you?"),
+    ("User", "I'm good, thanks. Let's talk."),
+    ("TsamAI", "Sure! What's on your mind?"),
+]
+
 INK = "#101216"
 SURFACE = "#16191f"
 LINE = "#23272f"
@@ -165,6 +176,10 @@ class GenerateWorker(QThread):
                 pending += self.tokenizer.decode_token(token_id)
                 if self.stop_str and self.stop_str in pending:
                     pending = pending[: pending.index(self.stop_str)]
+                    break
+                # the model relabeling its own line mid-text also means "done"
+                if self.stop_str and "TsamAI:" in pending:
+                    pending = pending[: pending.index("TsamAI:")]
                     break
                 if len(pending) > holdback:
                     cut = len(pending) - holdback
@@ -398,7 +413,8 @@ class TsamAIWindow(QMainWindow):
             self._append(text + "\n", self._fmt_user)
             self.chat_history.append(("User", text))
             prompt = (
-                "\n".join(f"{s}: {t}" for s, t in self.chat_history) + "\nTsamAI:"
+                "\n".join(f"{s}: {t}" for s, t in PRIMING + self.chat_history)
+                + "\nTsamAI:"
             )
             stop_str, self._reply = STOP_STR, []
         else:

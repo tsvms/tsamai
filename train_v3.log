@@ -1,0 +1,29 @@
+[v3] dataset: 23,061,473 train / 770,731 val tokens, vocab 8192
+model: 29.37M parameters on cuda
+initialized weights from checkpoints/v2.pt (val 1.2241)
+iter      0 | train 3.9805 | val 4.3062 | lr 1.00e-06 | 4s
+        saved checkpoint (val 4.3062)
+iter    250 | train 2.0141 | val 2.3560 | lr 9.94e-05 | 74s
+        saved checkpoint (val 2.3560)
+iter    500 | train 1.8877 | val 2.2030 | lr 9.58e-05 | 144s
+        saved checkpoint (val 2.2030)
+iter    750 | train 1.8201 | val 2.1607 | lr 8.93e-05 | 214s
+        saved checkpoint (val 2.1607)
+iter   1000 | train 1.7580 | val 2.1225 | lr 8.03e-05 | 284s
+        saved checkpoint (val 2.1225)
+iter   1250 | train 1.7131 | val 2.0796 | lr 6.94e-05 | 355s
+        saved checkpoint (val 2.0796)
+iter   1500 | train 1.7082 | val 2.0544 | lr 5.74e-05 | 425s
+        saved checkpoint (val 2.0544)
+iter   1750 | train 1.6767 | val 2.0346 | lr 4.53e-05 | 496s
+        saved checkpoint (val 2.0346)
+iter   2000 | train 1.6663 | val 2.0314 | lr 3.39e-05 | 566s
+        saved checkpoint (val 2.0314)
+iter   2250 | train 1.6632 | val 2.0300 | lr 2.41e-05 | 636s
+        saved checkpoint (val 2.0300)
+iter   2500 | train 1.6617 | val 2.0307 | lr 1.64e-05 | 707s
+iter   2750 | train 1.6149 | val 2.0083 | lr 1.16e-05 | 777s
+        saved checkpoint (val 2.0083)
+iter   3000 | train 1.6401 | val 2.0015 | lr 1.00e-05 | 848s
+        saved checkpoint (val 2.0015)
+done. best val loss 2.0015, checkpoint at checkpoints/v3.pt

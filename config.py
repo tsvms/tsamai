@@ -76,8 +76,8 @@ PRESETS = {
         TrainConfig(
             batch_size=16,
             grad_accum_steps=2,
-            max_iters=3000,           # ~50M tokens, 2-3 passes over the dialogues
-            eval_interval=250,
+            max_iters=7000,           # ~2 passes over the 57M dialogue tokens
+            eval_interval=500,
             eval_iters=50,
             learning_rate=1e-4,       # low LR: nudge v2 toward chat, don't erase it
             min_lr=1e-5,

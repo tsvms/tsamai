@@ -1,0 +1,70 @@
+[v2] dataset: 542,737,971 train / 5,481,168 val tokens, vocab 8192
+model: 29.37M parameters on cuda
+iter      0 | train 9.0623 | val 9.0620 | lr 6.00e-07 | 4s
+        saved checkpoint (val 9.0620)
+iter   1000 | train 2.2530 | val 2.2689 | lr 6.00e-04 | 272s
+        saved checkpoint (val 2.2689)
+iter   2000 | train 1.8291 | val 1.8282 | lr 5.99e-04 | 542s
+        saved checkpoint (val 1.8282)
+iter   3000 | train 1.6827 | val 1.6916 | lr 5.96e-04 | 813s
+        saved checkpoint (val 1.6916)
+iter   4000 | train 1.6125 | val 1.6161 | lr 5.90e-04 | 1084s
+        saved checkpoint (val 1.6161)
+iter   5000 | train 1.5659 | val 1.5743 | lr 5.83e-04 | 1355s
+        saved checkpoint (val 1.5743)
+iter   6000 | train 1.5236 | val 1.5450 | lr 5.73e-04 | 1626s
+        saved checkpoint (val 1.5450)
+iter   7000 | train 1.5012 | val 1.4891 | lr 5.62e-04 | 1895s
+        saved checkpoint (val 1.4891)
+iter   8000 | train 1.4823 | val 1.4662 | lr 5.48e-04 | 2165s
+        saved checkpoint (val 1.4662)
+iter   9000 | train 1.4505 | val 1.4460 | lr 5.33e-04 | 2436s
+        saved checkpoint (val 1.4460)
+iter  10000 | train 1.4431 | val 1.4588 | lr 5.17e-04 | 2707s
+iter  11000 | train 1.4421 | val 1.4244 | lr 4.98e-04 | 2977s
+        saved checkpoint (val 1.4244)
+iter  12000 | train 1.4190 | val 1.4164 | lr 4.79e-04 | 3248s
+        saved checkpoint (val 1.4164)
+iter  13000 | train 1.3946 | val 1.3951 | lr 4.58e-04 | 3518s
+        saved checkpoint (val 1.3951)
+iter  14000 | train 1.3838 | val 1.3914 | lr 4.36e-04 | 3788s
+        saved checkpoint (val 1.3914)
+iter  15000 | train 1.3585 | val 1.3893 | lr 4.13e-04 | 4059s
+        saved checkpoint (val 1.3893)
+iter  16000 | train 1.3802 | val 1.3537 | lr 3.90e-04 | 4329s
+        saved checkpoint (val 1.3537)
+iter  17000 | train 1.3480 | val 1.3408 | lr 3.66e-04 | 4599s
+        saved checkpoint (val 1.3408)
+iter  18000 | train 1.3378 | val 1.3403 | lr 3.42e-04 | 4869s
+        saved checkpoint (val 1.3403)
+iter  19000 | train 1.3291 | val 1.3256 | lr 3.18e-04 | 5138s
+        saved checkpoint (val 1.3256)
+iter  20000 | train 1.3174 | val 1.3130 | lr 2.94e-04 | 5406s
+        saved checkpoint (val 1.3130)
+iter  21000 | train 1.3171 | val 1.3181 | lr 2.70e-04 | 5674s
+iter  22000 | train 1.3025 | val 1.2982 | lr 2.47e-04 | 5942s
+        saved checkpoint (val 1.2982)
+iter  23000 | train 1.2811 | val 1.2911 | lr 2.24e-04 | 6210s
+        saved checkpoint (val 1.2911)
+iter  24000 | train 1.2779 | val 1.2774 | lr 2.02e-04 | 6478s
+        saved checkpoint (val 1.2774)
+iter  25000 | train 1.2642 | val 1.2896 | lr 1.81e-04 | 6746s
+iter  26000 | train 1.2694 | val 1.2641 | lr 1.62e-04 | 7011s
+        saved checkpoint (val 1.2641)
+iter  27000 | train 1.2630 | val 1.2584 | lr 1.43e-04 | 7276s
+        saved checkpoint (val 1.2584)
+iter  28000 | train 1.2339 | val 1.2653 | lr 1.27e-04 | 7541s
+iter  29000 | train 1.2466 | val 1.2485 | lr 1.12e-04 | 7810s
+        saved checkpoint (val 1.2485)
+iter  30000 | train 1.2449 | val 1.2334 | lr 9.82e-05 | 8079s
+        saved checkpoint (val 1.2334)
+iter  31000 | train 1.2301 | val 1.2443 | lr 8.67e-05 | 8351s
+iter  32000 | train 1.2410 | val 1.2345 | lr 7.72e-05 | 8620s
+iter  33000 | train 1.2232 | val 1.2261 | lr 6.97e-05 | 8888s
+        saved checkpoint (val 1.2261)
+iter  34000 | train 1.2292 | val 1.2243 | lr 6.43e-05 | 9156s
+        saved checkpoint (val 1.2243)
+iter  35000 | train 1.2116 | val 1.2241 | lr 6.11e-05 | 9424s
+        saved checkpoint (val 1.2241)
+iter  36000 | train 1.2073 | val 1.2403 | lr 6.00e-05 | 9692s
+done. best val loss 1.2241, checkpoint at checkpoints/v2.pt

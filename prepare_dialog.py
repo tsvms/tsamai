@@ -24,7 +24,7 @@ from tokenizer import BPETokenizer
 BASE = os.path.dirname(os.path.abspath(__file__))
 DIR = os.path.join(BASE, "data", "dialog")
 TOKENIZER_PATH = os.path.join(BASE, "data", "tinystories", "tokenizer.json")
-SODA_TRAIN = 100_000
+SODA_TRAIN = 700_000  # scan this many, keep the ones that survive filtering
 EOT = "<|endoftext|>"
 
 _space_before_punct = re.compile(r"\s+([.,!?;:'’])")
@@ -65,12 +65,26 @@ def collect() -> tuple[list[str], list[str]]:
             val_texts.append(format_dialogue(row["dialog"]))
 
     print("loading SODA subset ...")
+    # SODA speakers address each other by name ("Hey Sarah!") — a chat model
+    # trained on that greets *you* with a random invented name. Filter out
+    # any dialogue where a speaker's name leaks into the text itself.
+    def name_free(row) -> bool:
+        text = " ".join(row["dialogue"]).lower()
+        return not any(
+            name and name.lower() in text for name in set(row["speakers"])
+        )
+
     soda_train = load_dataset("allenai/soda", split=f"train[:{SODA_TRAIN}]")
+    kept = 0
     for row in tqdm(soda_train, desc="soda train"):
-        train_texts.append(format_dialogue(row["dialogue"]))
-    soda_val = load_dataset("allenai/soda", split="validation[:2000]")
+        if name_free(row):
+            train_texts.append(format_dialogue(row["dialogue"]))
+            kept += 1
+    print(f"soda: kept {kept:,}/{SODA_TRAIN:,} dialogues after the name filter")
+    soda_val = load_dataset("allenai/soda", split="validation[:4000]")
     for row in soda_val:
-        val_texts.append(format_dialogue(row["dialogue"]))
+        if name_free(row):
+            val_texts.append(format_dialogue(row["dialogue"]))
 
     return [t for t in train_texts if t], [t for t in val_texts if t]
 
