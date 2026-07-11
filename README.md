@@ -37,7 +37,8 @@ python app.py
 ```
 
 The app needs at least one trained checkpoint in `checkpoints/`. Either grab
-the weights from the releases page, or train your own (below). CUDA is used
+the weights from the [releases page](https://github.com/tsvms/tsamai/releases)
+(instructions there), or train your own (below). CUDA is used
 if available, otherwise it runs on CPU (fine for chatting, slow for training).
 
 ## Training from scratch
